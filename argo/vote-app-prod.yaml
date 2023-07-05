@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dotnetcore-app-prod
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: dotnetcore-app-prod
+    server: https://kubernetes.default.svc 
+  project: default 
+  source: 
+    path: environments/prod
+    repoURL: https://github.com/SaifRehman/dotnetcore-gitops
+    targetRevision: main
+  syncPolicy: 
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

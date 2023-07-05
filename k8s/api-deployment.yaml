@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dotnetcore-api
+  name: dotnetcore-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnetcore-api
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: dotnetcore-api
+    spec:
+      containers:
+      - image: quay.io/rh-ee-srehman/dotnetcore:latest
+        imagePullPolicy: Always
+        name: dotnetcore-api
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
