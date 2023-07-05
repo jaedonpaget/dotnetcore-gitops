@@ -24,7 +24,7 @@ spec:
         imagePullPolicy: Always
         name: dotnetcore-api
         ports:
-        - containerPort: 80
+        - containerPort: 6001
           protocol: TCP
         resources: {}
         terminationMessagePath: /dev/termination-log

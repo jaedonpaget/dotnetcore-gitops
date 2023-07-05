@@ -5,7 +5,7 @@ metadata:
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: dotnetcore-app-dev
+    namespace: dotnetcore
     server: https://kubernetes.default.svc 
   project: default 
   source: 
