@@ -5,7 +5,7 @@ metadata:
     app: dotnetcore-api
   name: dotnetcore-api
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: dotnetcore-api
