@@ -10,7 +10,7 @@ spec:
   project: default 
   source: 
     path: environments/dev
-    repoURL: https://github.com/SaifRehman/dotnetcore-gitops
+    repoURL: https://github.com/ericbos111/dotnetcore-gitops
     targetRevision: main
   syncPolicy: 
     automated:
